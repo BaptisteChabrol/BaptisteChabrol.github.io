@@ -2,7 +2,7 @@ name: publish-to-github-pages
 on:
   push:
     branches:
-      - main
+      - master
 
 permissions:
   contents: read
@@ -33,7 +33,7 @@ jobs:
         run: npx next build
 
       - name: Upload artifact 📡
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
